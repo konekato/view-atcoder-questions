@@ -11,10 +11,17 @@
     <body>
         <header id="header">View AtCoder Questions</header>
         <div id="body">
-            <form>
+            <form action="question" method="POST">
                 <div class="selectbox sb">
                     {{ form.contests }}
                 </div>
+                <div class="selectbox sb">
+                    {{ form.numbers }}
+                </div>
+                <div class="selectbox sb">
+                    {{ form.questions }}
+                </div>
+                <input type="submit" value="GO">
             </form>
         </div>
         <footer id="footer">copyright</footer>
