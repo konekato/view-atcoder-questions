@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-
+from .forms import *
 
 class SelectQuestions(TemplateView):
-    template_name = "select_questions.html"
+    def select_questions(request):
+        template_name = "select_questions.html"
+        c = {'form': ViewContests(),}
+        return render(request, template_name, c)
 
 class ShowQuestion(TemplateView):
     template_name = "show_question.html"

@@ -5,6 +5,6 @@ import api.views as api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', api.SelectQuestions.as_view()),
+    path('home/', api.SelectQuestions.select_questions, name='contests'),
     path('home/question/', api.ShowQuestion.as_view())
 ]
