@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from forms import *
+from .forms import *
 
 class SelectQuestions(TemplateView):
     def select_questions(request):
@@ -11,20 +11,24 @@ class SelectQuestions(TemplateView):
 
 class ShowQuestion(TemplateView):
     def get():
-        # d = {
-        #     'contest': request.GET.get('contests'),
-        #     'number': request.GET.get('numbers'),
-        #     'question': request.GET.get('questions'),
-        #     }
         d = {
-            'contest': 'abc',
-            'number': '1',
-            'question': 'A',
+            'contest': request.POST.get('contests'),
+            'number': request.POST.get('numbers'),
+            'question': request.POST.get('questions'),
             }
+        # d = {
+        #     'contest': 'abc',
+        #     'number': '1',
+        #     'question': 'A',
+        #     }
         return d
         
     def show(request):
         template_name = "show_question.html"
-        context = get()
+        context = {
+            'contest': request.POST.get('contests'),
+            'number': request.POST.get('numbers'),
+            'question': request.POST.get('questions'),
+            }
 
         return render(request, template_name, context)
