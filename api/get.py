@@ -1,17 +1,32 @@
 import requests
+from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.http import HttpResponse
 from bs4 import BeautifulSoup
 
-from views import ShowQuestion
-get = ShowQuestion.get()
+class Scraping(TemplateView):
+    def print_url(request, self):
+        def dictionary():
+            d = {
+                'contest': request.POST.get('contests'),
+                'number': request.POST.get('numbers'),
+                'question': request.POST.get('questions'),
+                }
+            return d
+        get = dictionary()
 
-contest = get['contest']
-number = get['number']
-question = get['question']
+        contest = get['contest']
+        number = get['number']
+        question = get['question']
 
-url = "https://atcoder.jp/contests/" + contest + number + "/tasks/" + contest + number + "_" + question
+        url = "https://atcoder.jp/contests/" + contest + number + "/tasks/" + contest + number + "_" + question
+        print(url)
 
-print(url)
+        return get
+
+
+
+
 
 # r = requests.get(url)
 # soup = BeautifulSoup(r.text, "html.parser")
