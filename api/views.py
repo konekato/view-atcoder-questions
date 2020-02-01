@@ -33,12 +33,13 @@ class ShowQuestion(TemplateView):
             soup = BeautifulSoup(res, "html.parser")
             h = soup.find("div", id="task-statement").find("span", class_="lang-ja").find_all("div", class_="part")
             length = len(h)
-            d['length'] = length
             html = []
             for i in range(length):
                 html.append(h[i].text)
 
-            # assign html to d
+            # assign the values to d
+            d['url'] = url
+            d['length'] = length
             oddn = even = 1
             for i in range(length):
                 if i == 0:

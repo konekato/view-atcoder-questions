@@ -4,11 +4,16 @@ body{
 
     background-color: #72636E;
 
+    font-family: Arial, Helvetica, sans-serif;
     color: #FCFAF2;
 }
 
 h2 {
     margin: 15px 15px 5px;
+}
+
+a {
+    color: #FCFAF2;
 }
 
 #header {
@@ -117,8 +122,13 @@ h2 {
     border-radius: 0 15px 15px 0;
     border-color: #72636E;
     transition: .4s;
-  }
+}
   
-  .btn-right-radius:hover {
+.btn-right-radius:hover {
     background: #828282;
-  }
+}
+
+.itaght {
+    font-style: italic;
+    float: right;
+}
