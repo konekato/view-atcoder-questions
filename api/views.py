@@ -33,6 +33,7 @@ class ShowQuestion(TemplateView):
             soup = BeautifulSoup(res, "html.parser")
             h = soup.find("div", id="task-statement").find("span", class_="lang-ja").find_all("div", class_="part")
             length = len(h)
+            d['length'] = length
             html = []
             for i in range(length):
                 html.append(h[i].text)
@@ -59,7 +60,5 @@ class ShowQuestion(TemplateView):
             return d
         
         context = scraping(request)
-
-        print(context)
         
         return render(request, template_name, context)

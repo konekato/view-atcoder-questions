@@ -9,20 +9,23 @@
         <title>HOME - View AtCoder Questions</title>
     </head>
     <body>
-        <header id="header">View AtCoder Questions</header>
+        <header id="header"><a href="/home">View AtCoder Questions</a></header>
         <div id="body">
             <form action="/home/question/" method="POST">
                 {% csrf_token %}
+                <h2>Contest</h2>
                 <div class="selectbox sb">
                     {{ form.contests }}
                 </div>
+                <h2>Number</h2>
                 <div class="selectbox sb">
                     {{ form.numbers }}
                 </div>
+                <h2>Question</h2>
                 <div class="selectbox sb">
                     {{ form.questions }}
                 </div>
-                <input type="submit" value="GO">
+                <button type="submit" class="btn-right-radius">GO</button>
             </form>
         </div>
         <footer id="footer">copyright</footer>
