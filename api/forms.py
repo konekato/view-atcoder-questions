@@ -7,9 +7,9 @@ CONTESTS = (
     ('agc','AtCoder Grand Contest'),
 )
 
-NUMBERS = [[0 for i in range(2)] for j in range(11)]
+NUMBERS = [[0 for i in range(2)] for j in range(101)]
 NUMBERS[0] = {'',"Select"}
-for i in range(10):
+for i in range(100):
     for j in range(2):
         NUMBERS[i+1][j] = str(i+1)
 

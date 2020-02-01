@@ -6,7 +6,12 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
 
-        <title> : QUESTION - View AtCoder Questions</title>
+        <title>{{ contest }}{{ number }}{{ question }} : QUESTION - View AtCoder Questions</title>
     </head>
     <body>
         <header id="header">View AtCoder Questions</header>
+            <p>{{ statement }}</p>
+            <p>{{ constraint }}</p>
+            <p>{{ input }}</p>
+            <p>{{ output }}</p>
+    </body>
