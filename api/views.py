@@ -6,6 +6,11 @@ from bs4 import BeautifulSoup
 
 from .forms import *
 
+class MyDict(dict):
+    def __missing__(self,key):
+        v = self[key] = type(self)()
+        return v
+
 class SelectQuestions(TemplateView):
     def select_questions(request):
         template_name = "select_questions.html"
@@ -16,7 +21,7 @@ class ShowQuestion(TemplateView):
     def show(request):
         template_name = "show_question.html"
 
-        def scraping(request):
+        def scrape(request):
             # post data
             d = {
                 'contest': request.POST.get('contests'),
@@ -33,13 +38,47 @@ class ShowQuestion(TemplateView):
             soup = BeautifulSoup(res, "html.parser")
             h = soup.find("div", id="task-statement").find("span", class_="lang-ja").find_all("div", class_="part")
             length = len(h)
+
+            def dictate(scraped_dic, key_name):
+                dic = MyDict()
+                tag_lists = ['h3', 'p', 'li', 'pre']
+
+                for tag in tag_lists:
+                    s = scraped_dic.find_all(tag)
+                    if s:
+                        for count in range(len(s)):
+                            dic[key_name][tag][count] = s[count]
+
+                return dic
+
+            # assign the values to d
+            d['url'] = url
+            d['length'] = length
+            innum = outnum = 1
+            for i in range(length):
+                if i == 0:
+                    d.update(dictate(h[i], 'statement'))
+                elif i == 1:
+                    d.update(dictate(h[i], 'constraint'))
+                elif i == 2:
+                    d.update(dictate(h[i], 'input'))
+                elif i == 3:
+                    d.update(dictate(h[i], 'output'))
+                else:
+                    if i % 2 == 0:
+                        d.update(dictate(h[i], 'insample'+str(innum)))
+                        innum += 1
+                    else:
+                        d.update(dictate(h[i], 'outsample'+str(outnum)))
+                        outnum += 1
+
+            print(d)
+
             html = []
             for i in range(length):
                 html.append(h[i].text)
 
             # assign the values to d
-            d['url'] = url
-            d['length'] = length
             oddn = even = 1
             for i in range(length):
                 if i == 0:
@@ -53,13 +92,13 @@ class ShowQuestion(TemplateView):
                 else:
                     if i % 2 == 0:
                         d['insample'+str(oddn)] = html[i]
-                        oddn += 1
+                        
                     else:
                         d['outsample'+str(even)] = html[i]
-                        even += 1
+                        
 
             return d
         
-        context = scraping(request)
+        context = scrape(request)
         
         return render(request, template_name, context)
