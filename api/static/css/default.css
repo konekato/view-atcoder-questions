@@ -8,12 +8,25 @@ body{
     color: #FCFAF2;
 }
 
-h2 {
-    margin: 15px 15px 5px;
+h3 {
+    font-size: 20px;
+}
+
+hr {
+    background-color: #828281;
+    border-bottom: #828282;
+    padding: 0.5px 5px;
+    
 }
 
 a {
     color: #FCFAF2;
+}
+
+pre {
+    font-size: 18px;
+    font-style: italic;
+    padding-left: 20px;
 }
 
 #header {
@@ -36,14 +49,13 @@ a {
 
 #body {
     margin: 0px;
-    padding: 5px;
+    padding: 5px 20px;
 
     position: absolute;
     top: 60px;
     left: 60px;
-    bottom: 0px;
     right: 60px;
-    
+    bottom: inherit;
     background-color: #828282;
 }
 
