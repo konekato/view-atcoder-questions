@@ -11,10 +11,189 @@
     <body>
         <header id="header"><a href="/home">View AtCoder Questions</a></header>
         <div id="body">
-            <p>{{ statement }}</p>
-            <p>{{ constraint }}</p>
-            <p>{{ input }}</p>
-            <p>{{ output }}</p>
+            {% for element in statement.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in statement.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in statement.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in statement.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in constraint.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in constraint.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in constraint.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in constraint.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in input.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in input.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in input.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in input.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in output.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in output.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in output.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in output.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in insample1.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in insample1.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in insample1.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in insample1.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in outsample1.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in outsample1.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in outsample1.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in outsample1.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in insample2.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in insample2.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in insample2.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in insample2.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in outsample2.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in outsample2.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in outsample2.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in outsample2.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in insample3.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in insample3.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in insample3.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in insample3.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in outsample3.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in outsample3.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in outsample3.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in outsample3.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in insample4.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in insample4.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in insample4.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in insample4.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in outsample4.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in outsample4.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in outsample4.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in outsample4.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in insample5.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in insample5.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in insample5.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in insample5.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            {% for element in outsample5.h3 %}
+                <h3>{{ element }}</h3>
+            {% endfor %}
+            {% for element in outsample5.p %}
+                <p>{{ element }}</p>
+            {% endfor %}
+            {% for element in outsample5.li %}
+                <li>{{ element }}</li>
+            {% endfor %}
+            {% for element in outsample5.pre %}
+                <pre>{{ element }}</pre>
+            {% endfor %}
+            <hr>
+            
             <p class="itaght">link : <a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ url }}</a></p>
         </div>
     </body>

@@ -27,10 +27,11 @@ class ShowQuestion(TemplateView):
                 tag_lists = ['h3', 'p', 'li', 'pre']
 
                 for tag in tag_lists:
-                    s = dic.find_all(tag)
+                    s = dic.find_all(tag)    
                     if s:
                         for count in range(len(s)):
-                            d[key_name][tag][count] = s[count].text
+                            s[count] = s[count].text
+                        d[key_name][tag] = s
 
                 return d
 
@@ -49,7 +50,7 @@ class ShowQuestion(TemplateView):
             scraped_html = soup.find("div", id="task-statement").find("span", class_="lang-ja").find_all("div", class_="part")
             scraped_html_length = len(scraped_html)
 
-            # assign the values to d
+            # assign the values to dic
             dic['url'] = scraping_url
             dic['length'] = scraped_html_length
             innum = outnum = 1
