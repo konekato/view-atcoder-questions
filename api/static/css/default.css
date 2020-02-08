@@ -4,7 +4,29 @@ body{
 
     background-color: #72636E;
 
+    font-family: Arial, Helvetica, sans-serif;
     color: #FCFAF2;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+hr {
+    background-color: #828281;
+    border-bottom: #828282;
+    padding: 0.5px 5px;
+    
+}
+
+a {
+    color: #FCFAF2;
+}
+
+pre {
+    font-size: 18px;
+    font-style: italic;
+    padding-left: 20px;
 }
 
 #header {
@@ -13,23 +35,27 @@ body{
 
     background-color: #60373E;
 
+    white-space: nowrap;
+}
+
+#header a {
+    text-decoration: none;
+
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 55px;
     font-style: italic;
-
-    white-space: nowrap;
+    color: #FCFAF2;
 }
 
 #body {
     margin: 0px;
-    padding: 5px;
+    padding: 5px 20px;
 
     position: absolute;
     top: 60px;
     left: 60px;
-    bottom: 0px;
     right: 60px;
-    
+    bottom: inherit;
     background-color: #828282;
 }
 
@@ -51,7 +77,7 @@ body{
 .selectbox {
 	overflow: hidden;
 	width: 90%;
-	margin: 2em auto;
+	margin: 0.5px auto 1px;
 	text-align: center;
 }
 .selectbox select {
@@ -94,4 +120,37 @@ body{
 .selectbox.sb select {
 	padding: 8px 38px 8px 8px;
 	color: #FCFAF2;
+}
+
+.btn-right-radius {
+    position: absolute;
+    right: 40px;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #FCFAF2;
+    background: #72636E;
+    border-radius: 0 15px 15px 0;
+    border-color: #72636E;
+    transition: .4s;
+}
+  
+.btn-right-radius:hover {
+    background: #828282;
+}
+
+.itaght {
+    font-style: italic;
+    float: right;
+}
+
+.octicon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: text-bottom;
+    height: 1.5em;
+
+    position: absolute;
+    right: 40px;
 }
