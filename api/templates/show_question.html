@@ -6,11 +6,20 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}">
 
-        <title>{{ contest }}{{ number }}{{ question }} : QUESTION - View AtCoder Questions</title>
+        <title>
+            {% if not_found_title %}
+                {{ not_found_title }}
+            {% else %}
+                {{ contest }}{{ number }}{{ question }}
+            {% endif %}
+            : QUESTION - View AtCoder Questions</title>
     </head>
     <body>
         <header id="header"><a href="/home">View AtCoder Questions</a></header>
         <div id="body">
+            {% if not_found_message %}
+                <h1>{{ not_found_message }}</h1>
+            {% else %}
             {% for element in statement.h3 %}
                 <h3>{{ element }}</h3>
             {% endfor %}
@@ -195,5 +204,6 @@
             <hr>
             
             <p class="itaght">link : <a href="{{ url }}" target="_blank" rel="noopener noreferrer">{{ url }}</a></p>
+            {% endif %}
         </div>
     </body>

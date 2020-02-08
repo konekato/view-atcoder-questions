@@ -45,8 +45,14 @@ class ShowQuestion(TemplateView):
 
             # scraping
             scraping_url = "https://atcoder.jp/contests/" + dic['contest'] + dic['number'] + "/tasks/" + dic['contest'] + dic['number'] + "_" + dic['question']
-            res = requests.get(scraping_url).text
-            soup = BeautifulSoup(res, "html.parser")
+            res = requests.get(scraping_url)
+            if res.status_code >= 400:
+                dic = {
+                    'not_found_title': "Not Exist",
+                    'not_found_message': 'Questions Not Exist',
+                }
+                return dic
+            soup = BeautifulSoup(res.text, "html.parser")
             scraped_html = soup.find("div", id="task-statement").find("span", class_="lang-ja").find_all("div", class_="part")
             scraped_html_length = len(scraped_html)
 
