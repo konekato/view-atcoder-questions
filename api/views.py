@@ -47,6 +47,7 @@ class ShowQuestion(TemplateView):
             scraping_url = "https://atcoder.jp/contests/" + dic['contest'] + dic['number'] + "/tasks/" + dic['contest'] + dic['number'] + "_" + dic['question']
             res = requests.get(scraping_url)
             if res.status_code >= 400:
+                print("Questions not exist. -> URL:" + scraping_url)
                 dic = {
                     'not_found_title': "Not Exist",
                     'not_found_message': 'Questions Not Exist',
