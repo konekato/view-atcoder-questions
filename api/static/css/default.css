@@ -1,8 +1,10 @@
-body{
+body {
+    height: auto;
+    width: auto;
     margin: 0px;
     padding: 0px;
 
-    background-color: #72636E;
+    background-color: #806f7b;
 
     font-family: Arial, Helvetica, sans-serif;
     color: #FCFAF2;
@@ -17,8 +19,8 @@ h3 {
 }
 
 hr {
-    background-color: #828281;
-    border-bottom: #828282;
+    background-color: #72636E;
+    border-bottom: #72636E;
     padding: 0.5px 5px;
     
 }
@@ -37,6 +39,9 @@ pre {
     width: 100%;
     height: 60px;
 
+    position: fixed;
+    top: 0px;
+
     background-color: #60373E;
 
     white-space: nowrap;
@@ -51,31 +56,54 @@ pre {
     color: #FCFAF2;
 }
 
-#body {
+#main-left {
+    width: 75%;
     margin: 0px;
     padding: 5px 20px;
 
     position: absolute;
     top: 60px;
-    left: 60px;
-    right: 60px;
+    left: 0px;
     bottom: inherit;
-    background-color: #828282;
+}
+
+#main-right {
+    width: 18%;
+    height: 100%;
+    margin: 0px;
+    padding: 40px 30px;
+
+    position: fixed;
+    top: 60px;
+    right: 0px;
+    
+    background-color: #72636E;
 }
 
 #footer {
-    width: 100%;
+    width: 18%;
+    height: 15%;
     margin: 0px;
-    padding: 30px 10px;
+    padding: 0px 0px 10px 0px;
 
-    position: absolute;
+    position: fixed;
     bottom: 0px;
 
-    background-color: #08192D;
+    white-space: nowrap;
+
+
+    border-top: solid 1px rgb(73, 65, 69);
+}
+#footer div {
+    padding: 0px;
+    margin-bottom: 30px;
 
     text-align: center;
-    
-    white-space: nowrap;
+
+    position: absolute;
+    right: 10px;
+    left: 10px;
+    bottom: 0px;
 }
 
 .selectbox {
@@ -144,6 +172,16 @@ pre {
     background: #828282;
 }
 
+.jump {
+    padding: 0px 30px 0px 10px;
+    margin: 5px 0px;
+}
+
+.jump:hover {
+    background-color: rgb(73, 65, 69);
+    cursor: pointer;
+}
+
 .itaght {
     font-style: italic;
     float: right;
@@ -155,6 +193,9 @@ pre {
     vertical-align: text-bottom;
     height: 1.5em;
 
+    margin-bottom: 70px;
+
     position: absolute;
-    right: 40px;
+    right: 50%;
+    bottom: 0px;
 }
