@@ -16,14 +16,15 @@
     </head>
     <body>
         <header id="header"><a href="/home">View AtCoder Questions</a></header>
-        <div id="main-left">
+        <div id="main-left"></div>
+        <div id="main">
             {% if not_found_message %}
                 <h1>{{ not_found_message }}</h1>
             {% else %}
             <h1>{{ contest }}{{ number }}{{ question }}</h1>
             <hr>
             {% for element in statement.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="statement"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in statement.p %}
                 <p>{{ element }}</p>
@@ -36,7 +37,7 @@
             {% endfor %}
             <hr>
             {% for element in constraint.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="constraint"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in constraint.pre %}
                 <pre>{{ element }}</pre>
@@ -49,7 +50,7 @@
             {% endfor %}
             <hr>
             {% for element in input.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="input"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in input.p %}
                 <p>{{ element }}</p>
@@ -62,7 +63,7 @@
             {% endfor %}
             <hr>
             {% for element in output.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="output"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in output.p %}
                 <p>{{ element }}</p>
@@ -76,7 +77,7 @@
             {% if insample1.h3 %}
             <hr>
             {% for element in insample1.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="insample1"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in insample1.pre %}
                 <pre>{{ element }}</pre>
@@ -91,7 +92,7 @@
             {% if outsample1.h3 %}
             <hr>
             {% for element in outsample1.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="outsample1"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in outsample1.pre %}
                 <pre>{{ element }}</pre>
@@ -106,7 +107,7 @@
             {% if insample2.h3 %}
             <hr>
             {% for element in insample2.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="insample2"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in insample2.pre %}
                 <pre>{{ element }}</pre>
@@ -121,7 +122,7 @@
             {% if outsample2.h3 %}
             <hr>
             {% for element in outsample2.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="outsample2"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in outsample2.pre %}
                 <pre>{{ element }}</pre>
@@ -136,7 +137,7 @@
             {% if insample3.h3 %}
             <hr>
             {% for element in insample3.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="insample3"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in insample3.pre %}
                 <pre>{{ element }}</pre>
@@ -151,7 +152,7 @@
             {% if outsample3.h3 %}
             <hr>
             {% for element in outsample3.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="outsample3"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in outsample3.pre %}
                 <pre>{{ element }}</pre>
@@ -166,7 +167,7 @@
             {% if insample4.h3 %}
             <hr>
             {% for element in insample4.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="insample4"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in insample4.pre %}
                 <pre>{{ element }}</pre>
@@ -181,7 +182,7 @@
             {% if outsample4.h3 %}
             <hr>
             {% for element in outsample4.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="outsample4"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in outsample4.pre %}
                 <pre>{{ element }}</pre>
@@ -196,7 +197,7 @@
             {% if insample5.h3 %}
             <hr>
             {% for element in insample5.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="insample5"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in insample5.pre %}
                 <pre>{{ element }}</pre>
@@ -211,7 +212,7 @@
             {% if outsample5.h3 %}
             <hr>
             {% for element in outsample5.h3 %}
-                <h3>{{ element }}</h3>
+                <a name="outsample5"><h3>{{ element }}</h3></a>
             {% endfor %}
             {% for element in outsample5.pre %}
                 <pre>{{ element }}</pre>
@@ -230,20 +231,20 @@
 
         </div>
         <div id="main-right">
-            <div class="jump">{{ statement.h3.0 }}</div>
-            <div class="jump">{{ constraint.h3.0 }}</div>
-            <div class="jump">{{ input.h3.0 }}</div>
-            <div class="jump">{{ output.h3.0 }}</div>
-            <div class="jump">{{ insample1.h3.0 }}</div>
-            <div class="jump">{{ outsample1.h3.0 }}</div>
-            <div class="jump">{{ insample2.h3.0 }}</div>
-            <div class="jump">{{ outsample2.h3.0 }}</div>
-            <div class="jump">{{ insample3.h3.0 }}</div>
-            <div class="jump">{{ outsample3.h3.0 }}</div>
-            <div class="jump">{{ insample4.h3.0 }}</div>
-            <div class="jump">{{ outsample4.h3.0 }}</div>
-            <div class="jump">{{ insample5.h3.0 }}</div>
-            <div class="jump">{{ outsample5.h3.0 }}</div>
+            <div class="jump"><a href="#statement">{{ statement.h3.0 }}</a></div>
+            <div class="jump"><a href="#constraint">{{ constraint.h3.0 }}</a></div>
+            <div class="jump"><a href="#input">{{ input.h3.0 }}</a></div>
+            <div class="jump"><a href="#output">{{ output.h3.0 }}</a></div>
+            <div class="jump"><a href="#insample1">{{ insample1.h3.0 }}</a></div>
+            <div class="jump"><a href="#outsample1">{{ outsample1.h3.0 }}</a></div>
+            <div class="jump"><a href="#insample2">{{ insample2.h3.0 }}</a></div>
+            <div class="jump"><a href="#outsample2">{{ outsample2.h3.0 }}</a></div>
+            <div class="jump"><a href="#insample3">{{ insample3.h3.0 }}</a></div>
+            <div class="jump"><a href="#outsample3">{{ outsample3.h3.0 }}</a></div>
+            <div class="jump"><a href="#insample4">{{ insample4.h3.0 }}</a></div>
+            <div class="jump"><a href="#outsample4">{{ outsample4.h3.0 }}</a></div>
+            <div class="jump"><a href="#insample5">{{ insample5.h3.0 }}</a></div>
+            <div class="jump"><a href="#outsample5">{{ outsample5.h3.0 }}</a></div>
             <footer id="footer">
                 <a href="https://github.com/konekato" target="_blank" rel="noopener noreferrer">
                     <svg class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
