@@ -1,4 +1,4 @@
-# view-atcoder-questions
+# View AtCoder Questions
 [AtCoder](https://atcoder.jp/)のコンテストの問題を簡単に見られるWebアプリケーションです。
 
 ## インストール
